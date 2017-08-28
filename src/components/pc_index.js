@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import PCHeader from './pc_header.js';
+import PCHeader from './header/pc_header.js';
 
-class Index extends Component {
+class PCIndex extends Component {
   render() {
     return (
       <div>
@@ -11,4 +11,4 @@ class Index extends Component {
   }
 }
 
-export default Index;
+export default PCIndex;

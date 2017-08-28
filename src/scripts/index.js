@@ -1,13 +1,13 @@
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Index from '../components/index/index.js';
+import PCIndex from '../components/pc_index.js';
 
 class APP extends Component {
   render() {
     return (
       <div>
-        <Index></Index>
+        <PCIndex></PCIndex>
       </div>
     );
   }

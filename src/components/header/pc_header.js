@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Row, Col, Menu, Icon} from 'antd';
-import './pc_header.less';
+import '../../styles/pc_index.less';
 import logo from '../../images/logo.png';
 
 const MenuItem = Menu.Item;
