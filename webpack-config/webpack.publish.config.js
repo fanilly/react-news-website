@@ -36,7 +36,7 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 =========================================================*/
 var webpackConfig = {};
 webpackConfig.entry = { //程序入口
-  app: DIR_CONGIG.entry,
+  app: ['whatwg-fetch',DIR_CONGIG.entry],
   vendors: ['react', 'react-dom']
 };
 

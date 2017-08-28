@@ -1,6 +1,7 @@
 /*=======================================
 =               header start            =
 =======================================*/
+
 .index-pc-header {
   padding: 10px 0;
   .logo {
@@ -17,16 +18,95 @@
       padding-left: 5px;
       font-size: 24px;
       margin-top: 10px;
-      color:#108ee9;
+      color: #108ee9;
     }
   }
 }
 
+
+.loginout {
+  display: flex;
+  align-items: center;
+}
+
+.login-form {
+  .login-form-forgot {
+    float: right;
+  }
+  .login-form-button {
+    width: 100%;
+  }
+}
+
+.self-icon-font {
+  display: inline-block;
+  box-sizing: border-box;
+  padding:0 8px 0 0;
+  vertical-align: middle;
+  &::before {
+    font-size: 13px
+  }
+}
+
+
+
 /*=======================================
 =              footer start             =
 =======================================*/
-.index-pc-footer{
+
+.index-pc-footer {
   .copyright-txt {
     text-align: center;
   }
 }
+
+
+/*=======================================
+=              icons start             =
+=======================================*/
+
+@font-face {font-family: "iconfont";
+  src: url('../fonts/iconfont.eot?t=1503928723279'); /* IE9*/
+  src: url('../fonts/iconfont.eot?t=1503928723279#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.woff?t=1503928723279') format('woff'), /* chrome, firefox */
+  url('../fonts/iconfont.ttf?t=1503928723279') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg?t=1503928723279#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-socialcontant-alt:before {
+  content: "\e624";
+}
+
+.icon-guoji:before {
+  content: "\e625";
+}
+
+.icon-toutiao:before {
+  content: "\e63f";
+}
+
+.icon-keji:before {
+  content: "\e608";
+}
+
+.icon-shishang:before {
+  content: "\e619";
+}
+
+.icon-yule:before {
+  content: "\e615";
+}
+
+.icon-tiyu:before {
+  content: "\e639";
+}
+
+.icon-gerenzhongxinzhuyegerenziliao:before { content: "\e611"; }
+.icon-login:before { content: "\e606"; }

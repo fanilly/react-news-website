@@ -8,14 +8,16 @@ import Mobile from '../components/mobile.js';
 class APP extends Component {
   render() {
     return (
-      <div>
-        <MediaQuery query="(min-device-width: 1224px)">
-          <PC></PC>
-        </MediaQuery>
-        <MediaQuery query="(max-device-width: 1224px)">
-          <Mobile></Mobile>
-        </MediaQuery>
-      </div>
+      <Router>
+        <section>
+          <MediaQuery query="(min-device-width: 1224px)">
+            <PC></PC>
+          </MediaQuery>
+          <MediaQuery query="(max-device-width: 1224px)">
+            <Mobile></Mobile>
+          </MediaQuery>
+        </section>
+      </Router>
     );
   }
 }

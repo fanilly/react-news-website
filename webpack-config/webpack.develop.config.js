@@ -16,7 +16,7 @@ const DIR_CONGIG = {
 module.exports = {
 
   //程序入口
-  entry: DIR_CONGIG.entry,
+  entry: ['whatwg-fetch',DIR_CONGIG.entry],
 
   output: { //程序出口
     path: DIR_CONGIG.outputPath,
