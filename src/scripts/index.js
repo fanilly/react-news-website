@@ -1,13 +1,20 @@
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import PCIndex from '../components/pc_index.js';
+import MediaQuery from 'react-responsive';
+import PC from '../components/pc.js';
+import Mobile from '../components/mobile.js';
 
 class APP extends Component {
   render() {
     return (
       <div>
-        <PCIndex></PCIndex>
+        <MediaQuery query="(min-device-width: 1224px)">
+          <PC></PC>
+        </MediaQuery>
+        <MediaQuery query="(max-device-width: 1224px)">
+          <Mobile></Mobile>
+        </MediaQuery>
       </div>
     );
   }

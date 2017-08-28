@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Row, Col, Menu, Icon} from 'antd';
-import '../../styles/pc_index.less';
+import '../../styles/pc.less';
 import logo from '../../images/logo.png';
 
 const MenuItem = Menu.Item;
@@ -24,7 +24,7 @@ class PCHeader extends Component {
 
   render() {
     return (
-      <header className="index-header">
+      <header className="index-pc-header">
         <Row>
           <Col span={2}></Col>
           <Col span={4}>
