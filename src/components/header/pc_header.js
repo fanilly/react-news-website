@@ -37,57 +37,57 @@ class PCHeader extends Component {
   }
 
   //导航按钮点击改变焦点位置
-  navbarChange(e){
+  navbarChange(e) {
     this.setState({
       current: e.key
     });
   }
 
   //提交登录表单的回调
-  handleLoginSubmit(e){
+  handleLoginSubmit(e) {
     e.preventDefault();
     const formData = this.props.form.getFieldsValue();
     let actionUrl = `http://newsapi.gugujiankong.com/Handler.ashx?action=login&username=${formData.loginUserName}&password=${formData.loginPassword}`;
     let self = this;
     fetch(actionUrl).then(function(response) {
-        return response.json()
-      }).then(function(json) {
-        if(json){
-          message.success('Reminder: Your login success');
-          self.setState({
-            hasLogined:true,
-            userNickName:json.NickUserName,
-            visible:false
-          });
-        }else{
-          message.error('Warning: Your username or password error');
-        }
-      });
+      return response.json()
+    }).then(function(json) {
+      if (json) {
+        message.success('Reminder: Your login success');
+        self.setState({
+          hasLogined: true,
+          userNickName: json.NickUserName,
+          visible: false
+        });
+      } else {
+        message.error('Warning: Your username or password error');
+      }
+    });
   }
 
   //提交注册表单的回调
-  handleRegisterSubmit(e){
+  handleRegisterSubmit(e) {
     e.preventDefault();
     const formData = this.props.form.getFieldsValue();
-    let actionUrl =  `http://newsapi.gugujiankong.com/Handler.ashx?action=register&r_userName=${formData.registerUserName}&r_password=${formData.registerPassword}&r_confirm=${formData.registerConfirmPassword}`;
+    let actionUrl = `http://newsapi.gugujiankong.com/Handler.ashx?action=register&r_userName=${formData.registerUserName}&r_password=${formData.registerPassword}&r_confirm=${formData.registerConfirmPassword}`;
     fetch(actionUrl).then(function(response) {
-        return response.text()
-      }).then(function(flag) {
-        if(flag){
-          message.success('Reminder: Your register success');
-        }else{
-          message.error('Warning: Your register failed');
-        }
-      });
+      return response.text()
+    }).then(function(flag) {
+      if (flag) {
+        message.success('Reminder: Your register success');
+      } else {
+        message.error('Warning: Your register failed');
+      }
+    });
   }
 
   //点击登录按钮 弹出模态框
-  loginIn (){
+  loginIn() {
     this.setState({ visible: true });
   }
 
   //隐藏模态框
-  hideModal(){
+  hideModal() {
     this.setState({ visible: false });
   }
 

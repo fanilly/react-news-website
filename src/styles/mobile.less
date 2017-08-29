@@ -31,6 +31,56 @@ html {
 }
 
 
+/*=======================================
+=              main   start             =
+=======================================*/
+.mobile-lists{
+  .mobile-lists-item{
+    padding:10px 20px 0 ;
+    display:flex;
+    .mobile-lists-img{
+      padding-right:10px;
+      display:block;
+      width: 260px;
+      img{
+        width: 100%;
+      }
+    }
+    section{
+      flex:1;
+      h3{
+        padding-bottom:10px;
+        a{
+          color:#333;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:992px){
+  .mobile-lists .mobile-lists-item .mobile-lists-img{
+    width:200px;
+  }
+}
+
+@media(max-width:700px){
+  .mobile-lists .mobile-lists-item .mobile-lists-img{
+    width:160px;
+  }
+}
+
+@media(max-width:500px){
+  .mobile-lists .mobile-lists-item .mobile-lists-img{
+    width:120px;
+  }
+}
+
+.login-icon{
+  min-height: 173px;
+  background:url(../images/loading.gif) no-repeat center center;
+}
+
 
 /*=======================================
 =              footer start             =
