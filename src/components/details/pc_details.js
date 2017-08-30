@@ -1,7 +1,9 @@
 import React,{Component} from 'react';
-import {Row,Col} from 'antd';
+import {Row,Col,BackTop} from 'antd';
 import 'whatwg-fetch';
+import '../../styles/pc.less';
 
+import PCImgLists from '../list/pc_img_lists.js';
 import PCHeader from '../header/pc_header.js';
 import PCFooter from '../footer/pc_footer.js';
 
@@ -14,14 +16,23 @@ class PCDetails extends Component {
     }
   }
 
-  componentDidMount(){
+  getNewsUniquekey(uniquekey){
     let self = this;
-    let actionUrl = `http://newsapi.gugujiankong.com/Handler.ashx?action=getnewsitem&uniquekey=${this.props.match.params.uniquekey}`;
+    console.log(this);
+    let actionUrl = `http://newsapi.gugujiankong.com/Handler.ashx?action=getnewsitem&uniquekey=${uniquekey}`;
     fetch(actionUrl)
       .then((response)=>(response.json()))
       .then((json)=>{
         self.setState({data:json})
       });
+  }
+
+  componentDidMount(){
+    this.getNewsUniquekey(this.props.match.params.uniquekey);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.getNewsUniquekey(nextProps.match.params.uniquekey);
   }
 
   createDetailsContent(){
@@ -34,11 +45,22 @@ class PCDetails extends Component {
         <PCHeader />
         <Row>
           <Col span={2}></Col>
-          <Col span={14}>
-            <div dangerouslySetInnerHTML={this.createDetailsContent()}></div>
+          <Col span={20}>
+            <section className="pc-details">
+              <section className="pc-details-content">
+                <div dangerouslySetInnerHTML={this.createDetailsContent()}></div>
+              </section>
+              <section className="pc-details-rside">
+                <h3 className="details-hot-title">猜你喜欢</h3>
+                <PCImgLists count={16} type="yule" width='200px' />
+              </section>
+            </section>
           </Col>
-          <Col span={6}></Col>
-          <Col span={2}></Col>
+          <Col span={2}>
+            <BackTop>
+              <div className="ant-back-top-inner">UP</div>
+            </BackTop>
+          </Col>
         </Row>
         <PCFooter />
       </section>

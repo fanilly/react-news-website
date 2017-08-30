@@ -36,6 +36,15 @@ class PCHeader extends Component {
     }
   }
 
+  componentWillMount(){
+    if(sessionStorage.nickUserName && sessionStorage.userID){
+      this.setState({
+        hasLogined:true,
+        userNickName:sessionStorage.nickUserName
+      });
+    }
+  }
+
   //导航按钮点击改变焦点位置
   navbarChange(e) {
     this.setState({
@@ -59,6 +68,8 @@ class PCHeader extends Component {
           userNickName: json.NickUserName,
           visible: false
         });
+        sessionStorage.userID = json.UserName;
+        sessionStorage.nickUserName = json.NickUserName;
       } else {
         message.error('Warning: Your username or password error');
       }
@@ -91,6 +102,15 @@ class PCHeader extends Component {
     this.setState({ visible: false });
   }
 
+  loginOut() {
+    sessionStorage.removeItem('nickUserName');
+    sessionStorage.removeItem('userID');
+    this.setState({
+      hasLogined: false,
+      userNickName: ''
+    });
+  }
+
   render() {
 
     //登录按钮显示
@@ -100,12 +120,12 @@ class PCHeader extends Component {
           <i className="self-icon-font iconfont icon-gerenzhongxinzhuyegerenziliao"></i>
           {this.state.userNickName}&nbsp;&nbsp;
         </Link>
-        <Button type="dashed" htmlType="button">登出</Button>
+        <Button type="dashed" onClick={this.loginOut.bind(this)} htmlType="button">登出</Button>
       </MenuItem>:
       <MenuItem className="loginin">
-        <Link to={'#'} onClick={this.loginIn.bind(this)}>
+        <span onClick={this.loginIn.bind(this)}>
           <i className="self-icon-font iconfont icon-login"></i>登录/注册
-        </Link>
+        </span>
       </MenuItem>;
 
     const { getFieldDecorator } = this.props.form;

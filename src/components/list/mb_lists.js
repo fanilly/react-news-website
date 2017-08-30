@@ -28,12 +28,12 @@ class MBLists extends Component {
     const dataList = data.length ?
       data.map((item,index)=>(
         <section key={index} className="mobile-lists-item">
-          <Link to={'/'} className="mobile-lists-img">
+          <Link to={`/details/${item.uniquekey}`} className="mobile-lists-img">
             <img src={item.thumbnail_pic_s} alt=""/>
           </Link>
           <section>
             <h3>
-              <Link to={'/'}>{item.title}</Link>
+              <Link to={`/details/${item.uniquekey}`}>{item.title}</Link>
             </h3>
             <Tag>{item.realtype}</Tag>
             <span className="author-name">{item.author_name}</span>

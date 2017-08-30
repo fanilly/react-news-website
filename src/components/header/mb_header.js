@@ -13,7 +13,6 @@ import {
   message
 } from 'antd';
 import 'whatwg-fetch';
-import { Link } from 'react-router-dom';
 
 const MenuItem = Menu.Item;
 const Submenu = Menu.Submenu;
@@ -35,6 +34,15 @@ class MBHeader extends Component {
     }
   }
 
+  componentWillMount(){
+    if(sessionStorage.nickUserName && sessionStorage.userID){
+      this.setState({
+        hasLogined:true,
+        userNickName:sessionStorage.nickUserName
+      });
+    }
+  }
+
   //提交登录表单的回调
   handleLoginSubmit(e) {
     e.preventDefault();
@@ -51,7 +59,8 @@ class MBHeader extends Component {
           userNickName: json.NickUserName,
           visible: false
         });
-        console.log(self.state.hasLogined);
+        sessionStorage.userID = json.UserName;
+        sessionStorage.nickUserName = json.NickUserName;
       } else {
         message.error('Warning: Your username or password error');
       }
@@ -86,12 +95,12 @@ class MBHeader extends Component {
 
   render() {
     const userShow = this.state.hasLogined ?
-      <Link to={'/'} className="loginStateIcon">
+      <span to={'/'} className="loginStateIcon">
         <Icon type="solution" />
-      </Link>:
-      <Link to={'/'} className="loginStateIcon" onClick={this.loginIn.bind(this)}>
+      </span>:
+      <span className="loginStateIcon" onClick={this.loginIn.bind(this)}>
         <Icon type="login" />
-      </Link>;
+      </span>;
 
     const { getFieldDecorator } = this.props.form;
 

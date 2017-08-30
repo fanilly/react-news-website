@@ -29,7 +29,7 @@ class PCImgLists extends Component {
         <li key={index}>
           <Card style={{ width: this.props.width }} bodyStyle={{ padding: 0 }}>
             <div className="custom-image">
-              <Link to={`details/${item.uniquekey}`}>
+              <Link to={`/details/${item.uniquekey}`}>
                 <img alt="example" width="100%" src={item.thumbnail_pic_s} />
               </Link>
             </div>

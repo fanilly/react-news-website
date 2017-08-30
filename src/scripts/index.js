@@ -5,6 +5,7 @@ import MediaQuery from 'react-responsive';
 import PC from '../components/pc.js';
 import Mobile from '../components/mobile.js';
 import PCDetails from '../components/details/pc_details.js';
+import MBDetails from '../components/details/mb_details.js';
 
 class APP extends Component {
   render() {
@@ -13,10 +14,11 @@ class APP extends Component {
         <section>
           <MediaQuery query="(min-device-width: 1224px)">
             <Route exact path="/" component={PC}></Route>
-            <Route exact path="/details/:uniquekey" component={PCDetails}></Route>
+            <Route path="/details/:uniquekey" component={PCDetails}></Route>
           </MediaQuery>
           <MediaQuery query="(max-device-width: 1224px)">
             <Route exact path="/" component={Mobile}></Route>
+            <Route path="/details/:uniquekey" component={MBDetails}></Route>
           </MediaQuery>
         </section>
       </Router>
