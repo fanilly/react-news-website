@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Tabs } from 'antd';
-import MBLists from './mb_lists.js';
+import MBLists from '../list/mb_lists.js';
 
 const TabPane = Tabs.TabPane;
 

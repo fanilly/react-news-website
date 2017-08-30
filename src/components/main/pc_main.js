@@ -8,8 +8,8 @@ import carousel_img_03 from '../../images/3.jpg';
 import carousel_img_04 from '../../images/4.jpg';
 import carousel_img_05 from '../../images/5.jpg';
 
-import PublicList from '../public/list.js';
-import PublicImgLists from '../public/img_lists.js';
+import PCList from '../list/pc_list.js';
+import PCImgLists from '../list/pc_img_lists.js';
 
 class PCMain extends Component {
   render(){
@@ -27,10 +27,10 @@ class PCMain extends Component {
                   <div><img src={carousel_img_04} alt=""/></div>
                   <div><img src={carousel_img_05} alt=""/></div>
                 </Carousel>
-                <PublicImgLists count={6} type="yule" width='165px' />
+                <PCImgLists count={6} type="yule" width='165px' />
               </div>
               <div className="main-center">
-                <PublicList count={16} type="top" width='100%' title="热门头条" />
+                <PCList count={16} type="top" width='100%' title="热门头条" />
               </div>
               <div className="main-right-side"></div>
             </section>

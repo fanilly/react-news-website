@@ -198,7 +198,9 @@ class PCHeader extends Component {
           <Col span={16}>
             <Menu onClick={this.navbarChange.bind(this)} mode="horizontal" selectedKeys={[this.state.current]}>
               <MenuItem key="top">
-                <i className="self-icon-font iconfont icon-toutiao"></i>头条
+                <Link to={''}>
+                  <i className="self-icon-font iconfont icon-toutiao"></i>头条
+                </Link>
               </MenuItem>
               <MenuItem key="yule">
                 <i className="self-icon-font iconfont icon-yule"></i>娱乐

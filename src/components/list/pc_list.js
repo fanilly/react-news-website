@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
-import { Card } from 'antd';
 import { Link } from 'react-router-dom';
 import 'whatwg-fetch';
 import '../../styles/pc.less';
 
-class PublicImgLists extends Component {
+const DEFAULT_PROPS = {
+  width: '100%',
+  type: 'top',
+  count: 10,
+  title: 'default title'
+}
+
+class PCList extends Component {
+
   constructor() {
     super();
     this.state = {
@@ -23,30 +30,24 @@ class PublicImgLists extends Component {
   }
 
   render() {
+
     const {data} = this.state;
-    const dataList = data.length ?
+    const dataLists = data.length ?
       data.map((item,index)=>(
-        <li key={index}>
-          <Card style={{ width: this.props.width }} bodyStyle={{ padding: 0 }}>
-            <div className="custom-image">
-              <Link to={''}>
-                <img alt="example" width="100%" src={item.thumbnail_pic_s} />
-              </Link>
-            </div>
-            <div className="custom-card">
-              <h3>{item.title}</h3>
-              <p>{item.date}</p>
-            </div>
-          </Card>
-        </li>
+        <p key={index}>
+          <Link to={`/details/${item.uniquekey}`}>{item.title}</Link><span>{item.date}</span>
+        </p>
       )):'not find';
+
     return (
-      <ul className="img-lists">
-        {dataList}
-      </ul>
+      <article className="word-lists">
+        <h3>{this.props.title}</h3>
+        {dataLists}
+      </article>
     );
   }
 
 }
 
-export default PublicImgLists;
+PCList.defaultProps = DEFAULT_PROPS;
+export default PCList;
