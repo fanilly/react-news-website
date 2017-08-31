@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "antd": "^2.12.7",
+    "babel-polyfill": "^6.26.0",
     "fetch": "^1.1.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",

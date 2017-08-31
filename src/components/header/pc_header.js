@@ -116,7 +116,7 @@ class PCHeader extends Component {
     //登录按钮显示
     const userShow = this.state.hasLogined ?
       <MenuItem className="loginout">
-        <Link to={'/'} target="_blank">
+        <Link to={'/usercenter/collection'} target="_blank">
           <i className="self-icon-font iconfont icon-gerenzhongxinzhuyegerenziliao"></i>
           {this.state.userNickName}&nbsp;&nbsp;
         </Link>

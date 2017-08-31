@@ -13,6 +13,7 @@ import {
   message
 } from 'antd';
 import 'whatwg-fetch';
+import {Link} from 'react-router-dom';
 
 const MenuItem = Menu.Item;
 const Submenu = Menu.Submenu;
@@ -95,9 +96,9 @@ class MBHeader extends Component {
 
   render() {
     const userShow = this.state.hasLogined ?
-      <span to={'/'} className="loginStateIcon">
+      <Link to={'/usercenter'} className="loginStateIcon">
         <Icon type="solution" />
-      </span>:
+      </Link>:
       <span className="loginStateIcon" onClick={this.loginIn.bind(this)}>
         <Icon type="login" />
       </span>;
@@ -181,8 +182,10 @@ class MBHeader extends Component {
               </TabPane>
             </Tabs>
           </Modal>
-          <img src={logo} alt=""/>
-          <span>React news</span>
+          <Link className="mb-logo" to={'/'}>
+            <img src={logo} alt=""/>
+            <span>React news</span>
+          </Link>
           {userShow}
         </header>
       </section>

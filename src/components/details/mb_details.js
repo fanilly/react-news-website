@@ -5,6 +5,7 @@ import '../../styles/mobile.less';
 import MBHeader from '../header/mb_header.js';
 import MBFooter from '../footer/mb_footer.js';
 import PublicComments from '../public/comments.js';
+import PublicCollection from '../public/collection.js';
 
 class MBDetails extends Component {
   constructor() {
@@ -43,6 +44,7 @@ class MBDetails extends Component {
         <MBHeader />
         <section dangerouslySetInnerHTML={{__html:this.state.data.pagecontent}}></section>
         <PublicComments uniquekey={this.state.uniquekey} />
+        <PublicCollection  uniquekey={this.state.uniquekey}/>
         <MBFooter />
       </section>
     );

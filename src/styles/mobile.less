@@ -1,6 +1,8 @@
 html {
-  font-size:50px;
+  font-size: 50px;
 }
+
+
 
 /*=======================================
 =               header start            =
@@ -9,92 +11,115 @@ html {
 .index-mb-header {
   background-color: #f6f6f6;
   header {
-    position:relative;
+    position: relative;
     padding: 10px 0 0 8px;
     border-bottom: 1px solid #2db7f5;
-    display: flex;
-    img {
-      height: 50px;
-    }
-    span {
-      font-size: 35px;
-      color: #108ee9;
+    a.mb-logo {
+      display:flex;
+      img {
+        height: 50px;
+      }
+      span {
+        font-size: 35px;
+        color: #108ee9;
+      }
     }
     .loginStateIcon {
-      position:absolute;
-      right:0;
-      font-size:0.6rem;
-      top:12px;
-      right:12px;
+      position: absolute;
+      right: 0;
+      font-size: 0.6rem;
+      top: 12px;
+      right: 12px;
     }
   }
 }
 
 
+
+
 /*=======================================
 =              main   start             =
 =======================================*/
-.mobile-lists{
-  .mobile-lists-item{
-    padding:10px 20px 0 ;
-    display:flex;
-    .mobile-lists-img{
-      padding-right:10px;
-      display:block;
+
+.mobile-lists {
+  .mobile-lists-item {
+    padding: 10px 20px 0;
+    display: flex;
+    .mobile-lists-img {
+      padding-right: 10px;
+      display: block;
       width: 260px;
-      img{
+      img {
         width: 100%;
       }
     }
-    section{
-      flex:1;
-      h3{
-        padding-bottom:10px;
-        a{
-          color:#333;
+    section {
+      flex: 1;
+      h3 {
+        padding-bottom: 10px;
+        a {
+          color: #333;
         }
       }
     }
   }
 }
 
-@media(max-width:992px){
-  .mobile-lists .mobile-lists-item .mobile-lists-img{
-    width:200px;
+@media(max-width:992px) {
+  .mobile-lists .mobile-lists-item .mobile-lists-img {
+    width: 200px;
   }
 }
 
-@media(max-width:700px){
-  .mobile-lists .mobile-lists-item .mobile-lists-img{
-    width:160px;
+@media(max-width:700px) {
+  .mobile-lists .mobile-lists-item .mobile-lists-img {
+    width: 160px;
   }
 }
 
-@media(max-width:500px){
-  .mobile-lists .mobile-lists-item .mobile-lists-img{
-    width:120px;
+@media(max-width:500px) {
+  .mobile-lists .mobile-lists-item .mobile-lists-img {
+    width: 120px;
   }
 }
 
-.login-icon{
+.login-icon {
   min-height: 173px;
-  background:url(../images/loading.gif) no-repeat center center;
+  background: url(../images/loading.gif) no-repeat center center;
 }
 
-.mbile-details-box{
+.mbile-details-box {
   .comments {
     padding-left: 8px;
-    padding-right:8px;
+    padding-right: 8px;
   }
 }
+
+
 
 
 /*=======================================
 =              footer start             =
 =======================================*/
+
 .index-mb-footer {
-  padding:8px 0 10px;
+  padding: 8px 0 10px;
   .copyright-txt {
     text-align: center;
   }
+}
+
+@media(max-width:992px) {
+  .add-to-collection {
+    bottom: 30px !important;
+    right: 30px !important;
+    opacity: .7;
+  }
+  .ant-back-top-inner {
+    display: none !important;
+  }
+}
+
+.mb-user-center {
+  padding: 0 8px;
 }

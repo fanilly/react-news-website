@@ -7,6 +7,7 @@ import PCImgLists from '../list/pc_img_lists.js';
 import PCHeader from '../header/pc_header.js';
 import PCFooter from '../footer/pc_footer.js';
 import PublicComments from '../public/comments.js';
+import PublicCollection from '../public/collection.js';
 
 class PCDetails extends Component {
 
@@ -65,6 +66,7 @@ class PCDetails extends Component {
             <BackTop>
               <div className="ant-back-top-inner">UP</div>
             </BackTop>
+            <PublicCollection uniquekey={this.state.uniquekey}/>
           </Col>
         </Row>
         <PCFooter />

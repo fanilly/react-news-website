@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Tabs } from 'antd';
 import MBLists from '../list/mb_lists.js';
-import { History } from 'react-router-dom';
 
 const TabPane = Tabs.TabPane;
 

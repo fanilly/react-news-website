@@ -18,18 +18,20 @@ class PublicComments extends Component {
   }
 
   componentWillMount(){
-    this.getcommentedMessage(this.props.uniquekey);
-    this.setState({uniquekey:this.props.uniquekey});
+    if(this.props.uniquekey){
+      this.getcommentedMessage(this.props.uniquekey);
+      this.setState({uniquekey:this.props.uniquekey});
+    }
   }
 
   componentWillReceiveProps(nextProps){
-    this.getcommentedMessage(nextProps.uniquekey);
-    this.setState({uniquekey:this.props.uniquekey});
+    if(nextProps.uniquekey){
+      this.getcommentedMessage(nextProps.uniquekey);
+    }
   }
 
   //提交评论
   handleSubmit(e){
-    console.log(1);
     e.preventDefault();
     let self = this;
     let formDatas = this.props.form.getFieldsValue().commentContent;
@@ -58,7 +60,8 @@ class PublicComments extends Component {
     fetch(actionUrl)
       .then((response)=>(response.json()))
       .then((json)=>{
-        self.setState({data:json.reverse()});
+        let data = json.reverse();
+        self.setState({data:data});
       });
   }
 
