@@ -41,7 +41,7 @@ class PCList extends Component {
 
     return (
       <article className="word-lists">
-        <h3>{this.props.title}</h3>
+        <h3 dangerouslySetInnerHTML={{__html:this.props.title}}></h3>
         {dataLists}
       </article>
     );

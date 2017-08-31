@@ -68,7 +68,7 @@ class PCHeader extends Component {
           userNickName: json.NickUserName,
           visible: false
         });
-        sessionStorage.userID = json.UserName;
+        sessionStorage.userID = json.UserId;
         sessionStorage.nickUserName = json.NickUserName;
       } else {
         message.error('Warning: Your username or password error');

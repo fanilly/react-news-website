@@ -1,33 +1,37 @@
-import React,{Component} from 'react';
-import {Row,Col,BackTop} from 'antd';
+import React, { Component } from 'react';
+import { Row, Col, BackTop, Icon } from 'antd';
 import 'whatwg-fetch';
 import '../../styles/pc.less';
 
 import PCImgLists from '../list/pc_img_lists.js';
 import PCHeader from '../header/pc_header.js';
 import PCFooter from '../footer/pc_footer.js';
+import PublicComments from '../public/comments.js';
 
 class PCDetails extends Component {
 
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      data:''
+      data: '',
+      uniquekey:''
     }
   }
 
-  getNewsUniquekey(uniquekey){
+  getNewsUniquekey(uniquekey) {
     let self = this;
-    console.log(this);
+    this.setState({
+      uniquekey:uniquekey
+    })
     let actionUrl = `http://newsapi.gugujiankong.com/Handler.ashx?action=getnewsitem&uniquekey=${uniquekey}`;
     fetch(actionUrl)
-      .then((response)=>(response.json()))
-      .then((json)=>{
-        self.setState({data:json})
+      .then((response) => (response.json()))
+      .then((json) => {
+        self.setState({ data: json })
       });
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.getNewsUniquekey(this.props.match.params.uniquekey);
   }
 
@@ -35,8 +39,8 @@ class PCDetails extends Component {
     this.getNewsUniquekey(nextProps.match.params.uniquekey);
   }
 
-  createDetailsContent(){
-    return{__html:this.state.data.pagecontent}
+  createDetailsContent() {
+    return { __html: this.state.data.pagecontent }
   }
 
   render(){
@@ -49,10 +53,11 @@ class PCDetails extends Component {
             <section className="pc-details">
               <section className="pc-details-content">
                 <div dangerouslySetInnerHTML={this.createDetailsContent()}></div>
+                <PublicComments uniquekey={this.state.uniquekey} />
               </section>
               <section className="pc-details-rside">
-                <h3 className="details-hot-title">猜你喜欢</h3>
-                <PCImgLists count={16} type="yule" width='200px' />
+                <h3 className="details-hot-title"><Icon type="heart-o" />猜你喜欢</h3>
+                <PCImgLists count={22} type="yule" width='200px' />
               </section>
             </section>
           </Col>
@@ -66,6 +71,7 @@ class PCDetails extends Component {
       </section>
     );
   }
+
 }
 
 export default PCDetails;

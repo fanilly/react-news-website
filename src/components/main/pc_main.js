@@ -30,7 +30,11 @@ class PCMain extends Component {
                 <PCImgLists count={6} type="yule" width='165px' />
               </div>
               <div className="main-center">
-                <PCList count={16} type="top" width='100%' title="热门头条" />
+                <PCList
+                  count={16}
+                  type="top"
+                  width='100%'
+                  title='<i class="self-icon-font iconfont icon-toutiao"></i>热门头条' />
               </div>
               <div className="main-right-side"></div>
             </section>
