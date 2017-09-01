@@ -5,6 +5,11 @@ import MBLists from '../list/mb_lists.js';
 const TabPane = Tabs.TabPane;
 
 class MBMain extends Component {
+
+  componentWillMount(){
+    document.title = "React news";
+  }
+
   render(){
     return (
       <section>

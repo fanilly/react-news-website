@@ -23,6 +23,8 @@ module.exports = {
     filename: 'bundle.js'
   },
 
+  devtool: 'eval-source-map',
+
   devServer: { //webpack-dev-server工具配置
     port: 8090,
     contentBase: DIR_CONGIG.devContentBase,

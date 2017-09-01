@@ -24,6 +24,7 @@ class MBDetails extends Component {
       .then((response)=>(response.json()))
       .then((json)=>{
         self.setState({data:json});
+        document.title = json.title;
       });
   }
 

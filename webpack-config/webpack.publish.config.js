@@ -37,7 +37,7 @@ var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 var webpackConfig = {};
 webpackConfig.entry = { //程序入口
   app: ['babel-polyfill','whatwg-fetch',DIR_CONGIG.entry],
-  vendors: ['react', 'react-dom']
+  vendors: ['react', 'react-dom','whatwg-fetch','babel-polyfill']
 };
 
 /*=========================================================

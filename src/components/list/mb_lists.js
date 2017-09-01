@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Tag } from 'antd';
+import ReactPullLoad,{ STATS } from 'react-pullload'
 import 'whatwg-fetch';
 import '../../styles/mobile.less';
+//15617732758
+//中原区桐柏路于洛河路交叉口科技大厦9楼咨询中心
 
 class MBLists extends Component {
 
@@ -14,8 +17,12 @@ class MBLists extends Component {
   }
 
   componentWillMount() {
+    this.getNewsList(this.props.count);
+  }
+
+  getNewsList(count){
     let self = this;
-    let actionUrl = `http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=${this.props.type}&count=${this.props.count}`;
+    let actionUrl = `http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=${this.props.type}&count=${count}`;
     fetch(actionUrl)
       .then((response) => (response.json()))
       .then((json) => {
